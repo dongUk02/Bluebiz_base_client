@@ -1,0 +1,288 @@
+{
+  "menu": [
+    {
+      "pageCd": "0000",
+      "pageJaCd": "1000",
+      "level": "2",
+      "pageNm": "MES",
+      "page_path": "/mes",
+      "menuIcon": "HddOutlined",
+      "menu_seq": 2
+    },
+    {
+      "pageCd": "0000",
+      "pageJaCd": "8000",
+      "level": "2",
+      "pageNm": "게시판",
+      "page_path": "/board",
+      "menuIcon": "AuditOutlined",
+      "menu_seq": 4
+    },
+    {
+      "pageCd": "0000",
+      "pageJaCd": "9000",
+      "level": "2",
+      "pageNm": "시스템관리",
+      "page_path": "/admin",
+      "menuIcon": "SettingOutlined",
+      "menu_seq": 5
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1100",
+      "level": "3",
+      "pageNm": "기준정보",
+      "page_path": "/mes/base",
+      "menuIcon": "FormOutlined",
+      "menu_seq": 1
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1200",
+      "level": "3",
+      "pageNm": "영업관리",
+      "page_path": "/mes/sales",
+      "menuIcon": "DollarOutlined",
+      "menu_seq": 2
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1360",
+      "level": "3",
+      "pageNm": "설비관리",
+      "page_path": "/mes/production/stop",
+      "menuIcon": "ProjectOutlined",
+      "menu_seq": 3
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1300",
+      "level": "3",
+      "pageNm": "생산관리",
+      "page_path": "/mes/production",
+      "menuIcon": "ProjectOutlined",
+      "menu_seq": 4
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1400",
+      "level": "3",
+      "pageNm": "제품관리",
+      "page_path": "/mes/product",
+      "menuIcon": "ShoppingOutlined",
+      "menu_seq": 5
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1500",
+      "level": "3",
+      "pageNm": "자재관리",
+      "page_path": "/mes/material",
+      "menuIcon": "ShoppingOutlined",
+      "menu_seq": 6
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1600",
+      "level": "3",
+      "pageNm": "품질관리",
+      "page_path": "/mes/quality",
+      "menuIcon": "MedicineBoxOutlined",
+      "menu_seq": 7
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "2100",
+      "level": "3",
+      "pageNm": "보고서",
+      "page_path": "/mes/report",
+      "menuIcon": "ProjectOutlined",
+      "menu_seq": 8
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "2200",
+      "level": "3",
+      "pageNm": "CCP 관리",
+      "page_path": "/mes/ccp",
+      "menuIcon": "MedicineBoxOutlined",
+      "menu_seq": 9
+    },
+    {
+      "pageCd": "1000",
+      "pageJaCd": "1700",
+      "level": "3",
+      "pageNm": "현장 모니터링",
+      "page_path": "/mes/monitoring",
+      "menuIcon": "ProjectOutlined",
+      "menu_seq": 10
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1110",
+      "level": "4",
+      "pageNm": "거래처정보",
+      "page_path": "/mes/base/company/list",
+      "menu_seq": 1
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1120",
+      "level": "4",
+      "pageNm": "제품첨부파일",
+      "page_path": "/mes/base/draw/list",
+      "menu_seq": 2
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1124",
+      "level": "4",
+      "pageNm": "제품 레시피 정보 제품 레시피 정보",
+      "page_path": "/mes/base/product/bom",
+      "menu_seq": 3
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1126",
+      "level": "4",
+      "pageNm": "제품정보",
+      "page_path": "/mes/base/product/list",
+      "menu_seq": 4
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1130",
+      "level": "4",
+      "pageNm": "자재정보",
+      "page_path": "/mes/base/material/original",
+      "menu_seq": 5
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1128",
+      "level": "4",
+      "pageNm": "배합제품 정보",
+      "page_path": "/mes/base/product/pre",
+      "menu_seq": 6
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1140",
+      "level": "4",
+      "pageNm": "공정정보",
+      "page_path": "/mes/base/process/list",
+      "menu_seq": 7
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1150",
+      "level": "4",
+      "pageNm": "설비정보",
+      "page_path": "/mes/base/equipment/list",
+      "menu_seq": 8
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1180",
+      "level": "4",
+      "pageNm": "창고정보",
+      "page_path": "/mes/base/depot/list",
+      "menu_seq": 9
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1197",
+      "level": "4",
+      "pageNm": "DID정보",
+      "page_path": "/mes/base/did/list",
+      "menu_seq": 10
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1160",
+      "level": "4",
+      "pageNm": "자산정보",
+      "page_path": "/mes/base/asset/list",
+      "menu_seq": 11
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1151",
+      "level": "4",
+      "pageNm": "센서정보",
+      "page_path": "/mes/base/sensor/list",
+      "menu_seq": 12
+    },
+    {
+      "pageCd": "1100",
+      "pageJaCd": "1161",
+      "level": "4",
+      "pageNm": "작업자 배정",
+      "page_path": "/mes/base/user/list",
+      "menu_seq": 13
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9100",
+      "level": "3",
+      "pageNm": "메뉴관리",
+      "page_path": "/admin/menu",
+      "menuIcon": "MenuOutlined",
+      "menu_seq": 1
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9200",
+      "level": "3",
+      "pageNm": "권한관리",
+      "page_path": "/admin/auth",
+      "menuIcon": "IssuesCloseOutlined",
+      "menu_seq": 2
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9300",
+      "level": "3",
+      "pageNm": "공통코드관리",
+      "page_path": "/admin/base",
+      "menuIcon": "OrderedListOutlined",
+      "menu_seq": 3
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9400",
+      "level": "3",
+      "pageNm": "게시판관리",
+      "page_path": "/admin/bomn",
+      "menuIcon": "NotificationOutlined",
+      "menu_seq": 4
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9500",
+      "level": "3",
+      "pageNm": "부서관리",
+      "page_path": "/admin/dept",
+      "menuIcon": "ApartmentOutlined",
+      "menu_seq": 5
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9600",
+      "level": "3",
+      "pageNm": "직급관리",
+      "page_path": "/admin/grad",
+      "menuIcon": "BookOutlined",
+      "menu_seq": 6
+    },
+    {
+      "pageCd": "9000",
+      "pageJaCd": "9700",
+      "level": "3",
+      "pageNm": "사용자 정보 관리",
+      "page_path": "/admin/user",
+      "menuIcon": "UserOutlined",
+      "menu_seq": 7
+    }
+  ]
+}
