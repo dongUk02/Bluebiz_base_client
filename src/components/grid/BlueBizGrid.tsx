@@ -1,19 +1,19 @@
 // import React from 'react'
 import { AgGridReact } from 'ag-grid-react'
-import { BluebizGridProps } from '../../@types/grid/BluebizGird'
+import { BluebizGridProps } from './BluebizGird'
+import { Flex } from 'antd'
 
 export const BlueBizGrid = (props: BluebizGridProps) => {
   return (
-    // <Flex>
     <>
-      <div
-        style={{ height: '4%', width: '100%', textAlign: 'center', fontSize: '16px',padding:4, backgroundColor: '#fff'}}
+      <Flex
+        style={{ height: '36px', width: '100%', padding: 3, backgroundColor: '#fff' }}
       >
-        검색 및 기타 버튼 영역
-      </div>
+        'd'
+      </Flex>
       <div
         className={`ag-theme-${props.dummy}`}
-        style={{ height: '96%', width: '100%' }}
+        style={{ height: 'calc(100% - 36px)', width: '100%' }}
       >
         <AgGridReact
           rowData={props.rowData}
@@ -21,6 +21,5 @@ export const BlueBizGrid = (props: BluebizGridProps) => {
         />
       </div>
     </>
-    // </Flex>
   )
 }

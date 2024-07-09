@@ -9,6 +9,7 @@ class HttpClient {
       baseURL,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : '*'
       },
     });
 
@@ -30,18 +31,18 @@ class HttpClient {
     );
   };
 
+  // 헤더 추가
   private handleRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig | Promise<InternalAxiosRequestConfig> => {
-    // You can add additional headers or modify the config here
     return config;
   };
 
-  private handleResponse = (response: AxiosResponse): AxiosResponse | Promise<AxiosResponse> => {
-    // You can process the response here
-    return response;
+  // 성공 처리
+  private handleResponse = <T>(response: AxiosResponse): AxiosResponse<T> | Promise<AxiosResponse<T>> => {
+    return response.data;
   };
 
+  // 에러 처리
   private handleError = (error: AxiosError): Promise<AxiosError> => {
-    // Handle errors here
     return Promise.reject(error);
   };
 

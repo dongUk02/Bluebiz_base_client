@@ -25,14 +25,49 @@
     /* day js */
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    /* Custom */
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@service/*": [
+        "src/service/*"
+      ],
+      "@reducers/*": [
+        "src/reducers/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+    }
   },
   "include": [
-    "src"
+    "src",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
   ],
-  "typeRoots": ["./src/@types/global"],
+  "typeRoots": [
+    "./src/@types/global"
+  ],
 }

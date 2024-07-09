@@ -1,15 +1,13 @@
-// import { MenuObject } from './common.d';
 
-// export const buildRouterTree = (items: MenuObject[], parentCode: string = "0000"): MenuObject[] => {
-//   return items
-//     .filter((item) => item.pageCd === parentCode)
-//     .map((item) => {
-//       const children = buildMenuTree(items, item.pageJaCd);
-//       return {
-//         ...item,
-//         children: children.length ? children : undefined,
-//       };
-//     });
-// };
-
-
+/**
+ * @description : 문자열의 첫글자를 대분자로 변경하는 함수
+ * @param str : 'string'
+ * @returns 'String'
+ * ===========================================================
+ * DATE              AUTHOR             NOTE
+ * -----------------------------------------------------------
+ * 2024-07-01        이동욱       최초 생성
+ */
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
