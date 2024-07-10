@@ -2,7 +2,7 @@ import { Content } from 'antd/es/layout/layout'
 import { Suspense, lazy } from 'react';
 import PageLoader from '../../../pageLoader/PageLoader.tsx';
 
-export const TabContent = ({ pagePath }: { pagePath: string }) => {
+export const TabPane = ({ pagePath }: { pagePath: string }) => {
   const getPathComponent = (pagePath: string): React.LazyExoticComponent<React.ComponentType<any>> => {
     const defaultPath = '../../../../pages';
 

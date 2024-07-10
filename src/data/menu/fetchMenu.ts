@@ -1,5 +1,5 @@
 import apiClient from "../../service/common/apiClient";
-import { MenuResponse } from './../../utils/common.d';
+import { MenuResponse } from '../../@types/response/response';
 
 
 export const fetchMenu = async () => {

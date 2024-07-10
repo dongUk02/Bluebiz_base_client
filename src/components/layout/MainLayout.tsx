@@ -1,7 +1,7 @@
 import { Layout, theme } from "antd"
 import { MainLayoutStyled } from "./MainLayout.styles"
 import { useState } from "react";;
-import { MenuResponse } from "../../utils/common.d";
+import { MenuResponse } from "../../@types/response/response";
 import MainMenu from "./sider/menu/MainMenu";
 import MainLogo from "./sider/menu/MainLogo";
 import MainTabs from "./tabs/MainTabs";

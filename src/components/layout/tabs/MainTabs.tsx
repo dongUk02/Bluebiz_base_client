@@ -4,7 +4,7 @@ import { MainTabsInterface, Tab, onEditParamsType } from './MainTabs.d';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { removeTab, setActiveTab } from "../../../reducers/MainTabSlice";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hook";
-import { TabContent } from "./tabContent/TabContent";
+import { TabPane } from "./tabPane/TabPane";
 
 /**
  * @description : Tab 인터페이스 형태에서 children 속성에 컴포넌트를 추가한다
@@ -17,7 +17,7 @@ const addComponentsItems = (tabItems: Tab[]) => {
   return tabItems.map(tab => {
     return {
       ...tab,
-      children: <TabContent pagePath={tab.key} />
+      children: <TabPane pagePath={tab.key} />
     };
   });
 }
@@ -84,7 +84,7 @@ export const MainTabs = ({ headerHeight, collapsed, setCollapsed }: MainTabsInte
 
       const newTabPane = {
         ...itemsOnly,
-        children: <TabContent pagePath={itemsOnly.key} />
+        children: <TabPane pagePath={itemsOnly.key} />
       }
       newCurrentTabItems.push(newTabPane);
       setCurrentTabItems(newCurrentTabItems);

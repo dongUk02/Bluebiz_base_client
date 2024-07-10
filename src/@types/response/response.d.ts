@@ -13,10 +13,10 @@ export interface MenuResponse {
   "factCd": string,
   "menuSeq": number,
   "menuIcon"?: IconLoaderProps
-  "pageInfo": PageRespons,
+  "pageInfo": PageResponse,
 }
 
-export interface PageRespons {
+export interface PageResponse {
   "pageCd": string,
   "pageNm": string,
   "pagePath": string,

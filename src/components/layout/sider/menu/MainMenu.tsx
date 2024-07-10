@@ -1,10 +1,9 @@
 import { Menu, MenuProps } from "antd"
-import { IconLoaderProps, MenuResponse } from "../../../../utils/common.d"
+import { IconLoaderProps, MenuResponse } from "../../../../@types/response/response"
 import IconLoader from "../../../icon/IconLoader"
 import { useMemo, useState } from "react"
 import { MenuItemObject } from './MainMenu.d';
 import { Tab } from "../../tabs/MainTabs.d";
-import { TabContent } from "../../tabs/tabContent/TabContent";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/hook";
 import { addTab } from "../../../../reducers/MainTabSlice";
 

@@ -3,7 +3,7 @@ import PageLoader from './components/pageLoader/PageLoader';
 import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import { fetchMenu } from './data/menu/fetchMenu';
-import { MenuResponse } from './utils/common.d';
+import { MenuResponse } from './@types/response/response';
 import ErrorBoundary from 'antd/es/alert/ErrorBoundary';
 
  const Router = () => {
