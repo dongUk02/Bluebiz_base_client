@@ -1,0 +1,1 @@
+export type IconLoaderProps = keyof typeof import('@ant-design/icons');

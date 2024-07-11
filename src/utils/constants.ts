@@ -1,3 +1,3 @@
 export const APP_NAME = "(주) 블루비즈";
-export const COPY_RIGHT = `COPYRIGHT ⓒ BLUEBIZ CO ${new Date().getFullYear()},LTD. ALL RIGHTS RESERVED.`;
+export const AG_GRID_LISENSE = "CompanyName=BLUEBIZ CO., LTD,LicensedGroup=Data Grid Solution Program,LicenseType=MultipleApplications,LicensedConcurrentDeveloperCount=1,LicensedProductionInstancesCount=1,AssetReference=AG-034282,SupportServicesEnd=26_October_2023_[v2]_MTY5ODI3NDgwMDAwMA==fe86721ef89a7de51dc93bb8eb74b995";
 export const BASE_URL = "http://192.168.0.125:8081/";

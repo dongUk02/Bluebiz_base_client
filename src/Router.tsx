@@ -3,11 +3,11 @@ import PageLoader from './components/pageLoader/PageLoader';
 import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import { fetchMenu } from './data/menu/fetchMenu';
-import { MenuResponse } from './@types/response/response';
 import ErrorBoundary from 'antd/es/alert/ErrorBoundary';
+import { IMenuInfoRes } from './@types/response/response';
 
  const Router = () => {
-  const [menuList, setMenuList] = useState<MenuResponse[]>([]);
+  const [menuList, setMenuList] = useState<IMenuInfoRes[]>([]);
   const [routerPaths, setRouterPaths] = useState<RouteObject[]>([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ import ErrorBoundary from 'antd/es/alert/ErrorBoundary';
     }
   };
 
-  const castMenuResponseToRouteObject = (menus: MenuResponse[]): RouteObject[] => {
+  const castMenuResponseToRouteObject = (menus: IMenuInfoRes[]): RouteObject[] => {
     function capitalize(str: string) {
       return str.charAt(0).toUpperCase() + str.slice(1);
     }

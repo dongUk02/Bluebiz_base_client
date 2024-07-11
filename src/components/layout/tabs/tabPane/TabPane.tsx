@@ -1,36 +1,32 @@
-import { Content } from 'antd/es/layout/layout'
-import { Suspense, lazy } from 'react';
+import { Content } from 'antd/es/layout/layout';
+import { Suspense, useEffect, useState } from 'react';
 import PageLoader from '../../../pageLoader/PageLoader.tsx';
 
-export const TabPane = ({ pagePath }: { pagePath: string }) => {
-  const getPathComponent = (pagePath: string): React.LazyExoticComponent<React.ComponentType<any>> => {
-    const defaultPath = '../../../../pages';
+interface TabPaneProps {
+  importModule: { default: React.ComponentType<any> };
+}
 
-    const splitPaths: string[] = pagePath.split('/');
-    let element = lazy(() => import('../../../pageLoader/PageLoader.tsx'));
+export const TabPane = ({ importModule }: TabPaneProps) => {
+  const [PathComponent, setPathComponent] = useState<React.ComponentType<any> | null>(null);
 
-    if (splitPaths.length === 0) {
-      element = lazy(() => import(`${defaultPath}/Page.tsx`));
+  useEffect(() => {
+    if (importModule) {
+      setPathComponent(() => importModule.default);
     }
-    if (splitPaths.length === 1) {
-      element = lazy(() => import(`${defaultPath}/${splitPaths[0]}/Page.tsx`));
-    }
-    if (splitPaths.length === 2) {
-      element = lazy(() => import(`${defaultPath}/${splitPaths[0]}/${splitPaths[1]}/Page.tsx`));
-    }
-    if (splitPaths.length === 3) {
-      element = lazy(() => import(`${defaultPath}/${splitPaths[0]}/${splitPaths[1]}/${splitPaths[2]}/Page.tsx`));
-    }
+  }, [importModule]);
 
-    return element
+  if (!PathComponent) {
+    return <PageLoader />;
   }
 
-  const PathComponent = getPathComponent(pagePath);
   return (
     <Suspense fallback={<PageLoader />}>
-      <Content style={{ height: '90vh' }}>
+      <Content style={{
+        height: 'calc(100vh - 37px - 36px)',
+        overflowY: 'auto',
+      }}>
         <PathComponent />
       </Content>
     </Suspense>
-  )
-}
+  );
+};

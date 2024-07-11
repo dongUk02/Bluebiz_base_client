@@ -1,4 +1,4 @@
-import { ConfigProvider, ThemeConfig } from 'antd'
+import { AppProps, ConfigProvider, ThemeConfig } from 'antd'
 import './App.css'
 import { GlobalStyle } from './assets/styles/global-style'
 import "ag-grid-community/styles/ag-grid.css";
@@ -10,14 +10,22 @@ import * as dayjs from 'dayjs'
 import locale from "antd/locale/ko_KR";
 import 'dayjs/locale/ko';
 import Router from './Router';
+import { App as AntdApp } from 'antd';
 
 dayjs.locale('ko');
+
 function App() {
   const antdTheme: ThemeConfig = {
     token: {
       borderRadius: 3,
       fontSize: 14,
       fontFamilyCode: 'Pretendard',
+      motionDurationMid: '0.2s',
+      motionDurationSlow: '0.2s',
+      controlHeightLG: 32,
+      controlHeight: 28,
+      controlHeightSM: 24,
+      colorBgLayout:'#eee'
     },
     components: {
       Menu: {
@@ -26,23 +34,43 @@ function App() {
         darkSubMenuItemBg: '#04294b',
         itemPaddingInline: 4
       },
+      Layout: {
+        footerPadding: 0,
+      },
       Tabs: {
-        cardHeight: 32,
-        cardPadding: '4px 12px',
-        horizontalMargin: '0px',
+        cardPadding: '4px 8px',
+        cardGutter: 1,
+        horizontalMargin: '1px 0 0 0',
         cardBg: '#6d768f',
         itemColor: '#fdfdfd',
         inkBarColor: '#0011f9',
-        itemSelectedColor: '#177dc9',
+        itemSelectedColor: '#140ef7',
         itemHoverColor: '#bed4e5',
-        cardGutter: 0,
-      }
+      },
+      Button: {
+        paddingInlineLG: 8,
+        paddingInline: 6,
+        paddingInlineSM: 4,
+        controlHeightLG: 28,
+        controlHeight: 24,
+        controlHeightSM: 20,
+      },
+    }
+  }
+  const AntdAppConfig: AppProps = {
+    message: {
+      maxCount: 1
+    },
+    notification: {
+      placement: 'bottomRight'
     }
   }
 
   return (
     <ConfigProvider theme={antdTheme} locale={locale}>
       <GlobalStyle />
+      <AntdApp {...AntdAppConfig}>
+      </AntdApp>
       <Router />
     </ConfigProvider>
   )

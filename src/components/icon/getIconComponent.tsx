@@ -1,4 +1,3 @@
-// src/utils/getIconComponent.tsx
 import * as Icons from '@ant-design/icons';
 import { ComponentType } from 'react';
 

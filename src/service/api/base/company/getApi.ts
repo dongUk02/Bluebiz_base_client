@@ -1,9 +1,9 @@
 import apiClient from "@service/common/apiClient";
-import { IMenuInfoRes } from "src/@types/response/response";
+import { ICompInfoRes } from "src/@types/response/response";
 
-export const fetchMenu = async () => {
+export const fetchCompanyInfo = async () => {
   try {
-    const response = await apiClient.get<IMenuInfoRes[]>('/menu/info/list?custCd=1000&factCd=1000');
+    const response = await apiClient.get<ICompInfoRes[]>('/comp/info/list?custCd=1000');
     if (response.status === 200) {
       return response.data
     }

@@ -1,20 +1,20 @@
 import { TabPaneProps } from "antd";
 
-interface MainTabsInterface {
+export type onEditParamsType = React.MouseEvent | React.KeyboardEvent | string;
+
+export interface IMainTabs {
   collapsed: boolean,
   setCollapsed: React.Dispatch<React.SetStateAction<boolean>>,
   headerHeight?: number,
 }
 
-export interface Tab extends Omit<TabPaneProps, 'tab'> {
+export interface ITab extends Omit<TabPaneProps, 'tab'> {
   key: string;
   label: React.ReactNode;
 }
 
-export interface TabsState {
+export interface ITabsState {
   tabActiveKey: string;
   items: Tab[];
 }
 
-
-export type onEditParamsType = React.MouseEvent | React.KeyboardEvent | string;

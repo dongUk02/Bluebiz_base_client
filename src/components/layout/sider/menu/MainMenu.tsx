@@ -1,11 +1,12 @@
-import { Menu, MenuProps } from "antd"
-import { IconLoaderProps, MenuResponse } from "../../../../@types/response/response"
-import IconLoader from "../../../icon/IconLoader"
 import { useMemo, useState } from "react"
-import { MenuItemObject } from './MainMenu.d';
-import { Tab } from "../../tabs/MainTabs.d";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/hook";
-import { addTab } from "../../../../reducers/MainTabSlice";
+import { Menu, MenuProps } from "antd"
+import { IMenuItemObject } from '../../../../@types/layout/MainMenu';
+import IconLoader from "@components/icon/IconLoader";
+import { useAppDispatch, useAppSelector } from "@hooks/hook";
+import { addTab } from "@reducers/MainTabSlice";
+import { IMenuInfoRes } from "src/@types/response/response";
+import { IconLoaderProps } from "src/@types/global/global";
+import { ITab } from "src/@types/layout/MainTabs";
 
 /**
  * @description : 서버측 menu 데이터를 antd 컴포넌트의 들어갈 props 타입으로 변환하는 함수
@@ -17,14 +18,12 @@ import { addTab } from "../../../../reducers/MainTabSlice";
  * -----------------------------------------------------------
  * 2024-07-01        이동욱       최초 생성
  */
-const buildMenuTree = (items: MenuResponse[], parentCode: string = "00000"): MenuItemObject[] => {
+const buildMenuTree = (items: IMenuInfoRes[], parentCode: string = "00000"): IMenuItemObject[] => {
   return items
     .filter((item) => item.pageMoCd === parentCode)
     .map((item) => {
       const children = buildMenuTree(items, item.pageCd);
       return {
-        ...item,
-        ...item.pageInfo,
         key: item.pageInfo.pagePath,
         label: item.pageInfo.pageNm,
         icon: <IconLoader iconName={item.menuIcon as IconLoaderProps} />,
@@ -40,9 +39,9 @@ const buildMenuTree = (items: MenuResponse[], parentCode: string = "00000"): Men
  * -----------------------------------------------------------
  * 2024-07-01        이동욱       최초 생성
  */
-const getLevelKeys = (items1: MenuItemObject[]) => {
+const getLevelKeys = (items1: IMenuItemObject[]) => {
   const key: Record<string, number> = {};
-  const func = (items2: MenuItemObject[], level = 1) => {
+  const func = (items2: IMenuItemObject[], level = 1) => {
     items2.forEach((item) => {
       if (item.key) {
         key[item.key] = level;
@@ -60,11 +59,11 @@ const getLevelKeys = (items1: MenuItemObject[]) => {
 const MainMenu = ({
   menuList,
 }: {
-  menuList: MenuResponse[]
+  menuList: IMenuInfoRes[]
 }) => {
   const [stateOpenKeys, setStateOpenKeys] = useState<string[]>([]);
   const items = useMemo(() => buildMenuTree(menuList), [menuList]);
-  const levelKeys = useMemo(() => getLevelKeys(items as MenuItemObject[]), [items]);
+  const levelKeys = useMemo(() => getLevelKeys(items as IMenuItemObject[]), [items]);
 
   const tabActiveKey = useAppSelector(state => state.tabs.tabActiveKey);
   const dispatch = useAppDispatch()
@@ -91,7 +90,7 @@ const MainMenu = ({
 
   const onSelect: MenuProps['onSelect'] = ({ key }) => {
     const selectedMenuData = menuList.find(menu => menu.pageInfo.pagePath === key)!;
-    const newTab: Tab = { key, label: selectedMenuData.pageInfo.pageNm }
+    const newTab: ITab = { key, label: selectedMenuData.pageInfo.pageNm }
     dispatch(addTab(newTab));
   }
 

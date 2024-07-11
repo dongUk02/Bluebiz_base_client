@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store';
-import { TabsState } from '../components/layout/tabs/MainTabs.d';
+import { ITabsState } from '../@types/layout/MainTabs';
 
-const initialState: TabsState = {
+const initialState: ITabsState = {
   tabActiveKey: 'mes/home',
   items: [
     {
