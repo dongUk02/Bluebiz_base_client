@@ -7,16 +7,14 @@ import { BizGridSearchBar } from './BizGrid.topBar';
 import { IBizGridProps } from 'src/@types/grid/BizGrid';
 import { AgGridReact, AgGridReactProps } from 'ag-grid-react';
 import { useEffect, useRef, useState } from 'react';
-/**
- * @description : 
- * @params fetchFn : rowData를 받아오는 속성 
+/** 
+ * @params 
+ * fetchFn : rowData를 받아오는 속성 
  * ===========================================================
  * DATE              AUTHOR             NOTE
  * -----------------------------------------------------------
  * 2024-07-11        이동욱           최초 생성
  */
-
-
 
 const BizGrid = <T,>(props: IBizGridProps<T>) => {
   const { fetchFn, rowData: staticRowData, ...rest } = props;
@@ -27,7 +25,7 @@ const BizGrid = <T,>(props: IBizGridProps<T>) => {
     // filter: "agMultiColumnFilter",
     floatingFilter: true,
     filter: 'agTextColumnFilter',
-    suppressColumnsToolPanel: false,
+    // suppressColumnsToolPanel: true,
   };
 
 
@@ -46,12 +44,15 @@ const BizGrid = <T,>(props: IBizGridProps<T>) => {
     useRowData(staticRowData);
   }, [staticRowData])
 
-  const onFilterTextBoxChanged = () => {
-    gridRef.current!.api.setGridOption(
-      "quickFilterText",
-      (document.getElementById("filter-text-box") as HTMLInputElement).value,
-    )
-  }
+  /**
+   * TODO : 나중에 검색 기능 추가할때 참고
+   */
+  // const onFilterTextBoxChanged = () => {
+  //   gridRef.current!.api.setGridOption(
+  //     "quickFilterText",
+  //     (document.getElementById("filter-text-box") as HTMLInputElement).value,
+  //   )
+  // }
 
   return (
     <>
@@ -62,7 +63,7 @@ const BizGrid = <T,>(props: IBizGridProps<T>) => {
         placeholder="Filter..."
         onInput={onFilterTextBoxChanged}
       /> */}
-      <FlexPanel vertical height={'calc(100% - 52px)'} padding='4px 8px 0px 8px'>
+      <FlexPanel vertical height={'calc(100% - 56px)'} padding='4px 8px 0px 8px'>
         <Flex justify='space-between' gap={4} style={{ height: '32px', width: '100%' }}>
           <Flex gap={4}>
             {' '}

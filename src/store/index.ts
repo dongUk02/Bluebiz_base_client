@@ -4,6 +4,9 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import logger from 'redux-logger';
 
+/**
+ * 로컬스토리지 스토어
+ */
 const persistConfig = {
   key: "tabs",
   storage,
@@ -28,4 +31,3 @@ export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
 export { store, persistor };
-

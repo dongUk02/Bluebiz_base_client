@@ -27,6 +27,6 @@ export const TabPane = ({ importModule }: TabPaneProps) => {
       }}>
         <PathComponent />
       </Content>
-    </Suspense>
+    </Suspense> 
   );
 };

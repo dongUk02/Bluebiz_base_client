@@ -55,7 +55,6 @@ const getLevelKeys = (items1: IMenuItemObject[]) => {
   return key;
 };
 
-
 const MainMenu = ({
   menuList,
 }: {

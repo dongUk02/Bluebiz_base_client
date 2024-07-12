@@ -25,7 +25,7 @@ function App() {
       controlHeightLG: 32,
       controlHeight: 28,
       controlHeightSM: 24,
-      colorBgLayout:'#eee'
+      colorBgLayout: '#eee'
     },
     components: {
       Menu: {
@@ -44,8 +44,12 @@ function App() {
         cardBg: '#6d768f',
         itemColor: '#fdfdfd',
         inkBarColor: '#0011f9',
-        itemSelectedColor: '#140ef7',
+        itemSelectedColor: '#124c97',
         itemHoverColor: '#bed4e5',
+        colorBgContainer: '#eee',
+        colorBorderSecondary: '#bbb',
+        motionDurationMid: '0.1s',
+        motionDurationSlow: '0.3s',
       },
       Button: {
         paddingInlineLG: 8,

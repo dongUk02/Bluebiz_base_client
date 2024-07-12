@@ -1,6 +1,10 @@
+import FlexPanel from "@components/flex/FlexPanel"
+
 function Home() {
   return (
-    <div>Home</div>
+    <FlexPanel height={'100%'}>
+      대쉬보드
+    </FlexPanel>
   )
 }
 

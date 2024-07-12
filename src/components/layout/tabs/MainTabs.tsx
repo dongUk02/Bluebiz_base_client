@@ -14,10 +14,11 @@ import { IMainTabs, ITab, onEditParamsType } from "src/@types/layout/MainTabs";
  */
 
 const modules = import.meta.glob('/src/**/Page.tsx');
+
 /**
  * @description : import.meta.glob 을 통해 얻어온 Page 컴포넌트들 중 해당 컴포넌트만 Inport 함
  * @tip : _queryString 변수 같은 경우 사용하는 곳은 없지만 추후 사용될 여지가 있어 _ 로 표기
- * @document : https://ko.vitejs.dev/guide/features#glob-import
+ * @document : import.meta.glob : https://ko.vitejs.dev/guide/features#glob-import
  */
 const fetchModule = async (key: string) => {
   const [path, _queryString] = key.split('?');
@@ -62,12 +63,12 @@ export const MainTabs = ({ headerHeight, collapsed, setCollapsed }: IMainTabs) =
     removePane(key)
     dispatch(removeTab(key));
   };
-
   const onEdit = (targetKey: onEditParamsType, action: 'add' | 'remove') => {
     if (action === "remove") {
       handleRemoveTab(targetKey as string);
     }
   };
+
 
   /**
   * @description 실제 redux store랑 연관 없이 view 에서 탭을 제거 함
